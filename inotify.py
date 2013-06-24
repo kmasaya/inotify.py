@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# coding: UTF-8
 
 import os
 import sys
@@ -21,7 +22,7 @@ def scan( options):
         for ( root, dirs, files) in os.walk( options.scan_directory):
             for filename in files:
                 filepath = os.path.join( root, filename)
-                if filename == options.filename:
+                if options.filename.endswith( filename):
                     continue
                 if not os.path.exists( filepath):
                     continue
@@ -47,8 +48,6 @@ def scan( options):
 def parser_option():
     parser = OptionParser()
 
-    parser.add_option( "-s", "--server", dest="server", help="run server", action="store_true", default=False)
-    parser.add_option( "-p", "--port", dest="server_port", help="server port", default="8080")
     parser.add_option( "-f", "--file", dest="file", help="output file", action="store_true", default=False)
     parser.add_option( "-o", "--filename", dest="filename", help="output filename", default="inotifypy.log")
     parser.add_option( "-d", "--directory", dest="scan_directory", help="scan directory", default="./")
