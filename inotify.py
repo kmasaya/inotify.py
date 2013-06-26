@@ -51,7 +51,7 @@ def parser_option():
     parser.add_option( "-f", "--file", dest="file", help="output file", action="store_true", default=False)
     parser.add_option( "-o", "--filename", dest="filename", help="output filename", default="inotifypy.log")
     parser.add_option( "-d", "--directory", dest="scan_directory", help="scan directory", default="./")
-    parser.add_option( "-t", "--time", dest="scan_interval", help="scan interval", default=3)
+    parser.add_option( "-i", "--interval", dest="scan_interval", help="scan interval", default=3)
     parser.add_option( "-l", "--log", dest="scan_log", help="scan renew print log", default=True)
 
     return parser.parse_args( argv[1:])

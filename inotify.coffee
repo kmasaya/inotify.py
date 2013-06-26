@@ -1,4 +1,4 @@
-inotify = ( filename="inotifypy.log", interval_time=5) ->
+inotifypy = ( filename="inotifypy.log", interval_time=5) ->
     get = =>
         $.ajax(
             type: "GET"
@@ -7,10 +7,8 @@ inotify = ( filename="inotifypy.log", interval_time=5) ->
             cache: false
             ifModified: true
         ).done( ( data) ->
-            if time < data
+            if @time < data
                 window.location.reload()
-            else
-                console.log( data)
         )
 
     time = new Date().getTime() / 1000
