@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>inotifypy Demo</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="./../inotify.js"></script>
+    <script type="text/javascript">
+      inotifypy( 1);
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <p>インターバルごとに更新チェックをし更新されていればページをリロードし、下の数字がランダムに変更されます。</p>
+      <script type="text/javascript">
+	document.write( Math.random());
+      </script>
+    </div>
+  </body>
+</html>
